@@ -1,135 +1,142 @@
-# URLL (URLLauncher) v0.007
+# URLL (URLLauncher) v0.008
 
-**ショートカットキー一発でブラウザでURLを開く** macOS のメニューバー常駐アプリです。
+English | [日本語](README.ja.md)
 
-## 主な機能
+**Open a URL in your browser with a single shortcut key.** URLL is a macOS menu bar app.
 
- - **URLジャンプ**：ショートカットキーとURLの組み合わせを設定しURLを開く。
- - **アプリ起動**：ショートカットキーで、登録したアプリを起動する。
- - **キー操作**：ショートカットキーを押すと、前面のアプリに別のキーを送る。
-  （例: ⌥W を押すと、前面のアプリに ⌘W（タブを閉じる）を送る。）
+## Features
 
-## はじめかた（インストール）
+ - **URL Jump**: Pair a shortcut key with a URL, and the key opens that URL.
+ - **App Launch**: A shortcut key launches an app you registered.
+ - **Key Action**: A shortcut key sends a different key to the frontmost app.
+  (Example: press ⌥W to send ⌘W (Close Tab) to the frontmost app.)
 
-URLL は Apple の公証（ノータリゼーション）を受けたアプリです。
+## Getting Started (Installation)
 
-1. [Releases の最新版](https://github.com/iori-soft/URLL/releases/latest) から `URLL-vX.XXX.dmg`（X.XXX はバージョン）をダウンロードして開き、**URLL** を「アプリケーション」フォルダへドラッグします。
-2. URLL を開きます。「インターネットからダウンロードされたアプリです」と聞かれたら **「開く」** を押します。
-3. URLL が起動して、メニューバーにアイコンが出ます。
-4. キー操作を使うときだけ、設定画面の「キー操作」タブで **「許可する…」** を押し、**アクセシビリティ** で URLL をオンにします（下の「アクセシビリティの許可」も参照）。
-   <!-- 画面写真: アクセシビリティの許可（準備中） -->
+URLL is notarized by Apple.
 
-## 機能詳細
+1. Download the DMG from [the URLL website](https://iori-soft.github.io/), open it, and drag **URLL** into the Applications folder.
+2. Open URLL. If macOS says the app was downloaded from the internet, click **Open**.
+3. URLL starts and its icon appears in the menu bar.
+4. Only if you use Key Actions: in Settings, open the "Key Actions" tab, click **Allow…**, and turn on URLL under **Accessibility** (see "Accessibility Permission" below).
+   <!-- Screenshot: Accessibility permission (coming soon) -->
 
-#### URLジャンプ
-**どのアプリからでも ⌥ + 英字で URL を開く**
-   - URL やアプリを開くだけなら、アクセシビリティの許可はいりません。
-   - 初回起動時は何も登録されていないので、設定画面が自動で開きます。
-   - キーは設定画面でボタンをクリックしてから押すだけで登録・変更できます。
+## Details
 
-**よく開く URL をキーに登録できる**
-   - 名前・URL・キーの組を追加・削除できます。
-   - キーは ⌥ ⌘ ⌃ のどれかとほかのキーの組み合わせです。同じキーは2つの行に使えません。ほかのアプリや macOS が使っているキーも登録できません。
-   - キーが無い行は、メニューから開くだけの項目になります。キーが足りなくなったら、よく使うものだけにキーを付けてください。
-   - `shortcuts://`・`mailto:`・`x-apple.systempreferences:` などの URL スキームも登録できます (アプリが開きます)。
-   - スキームを省いた URL (example.com など) には自動で `https://` を付けます。
+#### URL Jump
+**Open a URL with ⌥ + a letter from any app**
+   - Opening URLs and apps does not need Accessibility permission.
+   - Nothing is registered on first launch, so the Settings window opens automatically.
+   - To set or change a key, click the key button in Settings and press the key.
 
-#### アプリ起動
-**URL の代わりにアプリも登録できる**
-   - 設定の「アプリ登録」タブで「アプリを追加…」からアプリを選ぶと、キーでそのアプリを起動・前面に出します (URL 欄に `/Applications/〜.app` が入ります)。
+**Assign keys to the URLs you open often**
+   - Add or delete sets of name, URL and key.
+   - A key is a combination of ⌥, ⌘ or ⌃ with another key. The same key cannot be used on two rows. Keys already used by other apps or by macOS cannot be registered either.
+   - A row without a key becomes a menu-only item. If you run out of keys, give keys only to the items you use most.
+   - URL schemes such as `shortcuts://`, `mailto:` and `x-apple.systempreferences:` also work (they open the matching app).
+   - A URL without a scheme (such as example.com) gets `https://` added automatically.
 
-#### キー操作
-**キー操作 (タブを閉じる ⌘W など) も割り当てられる**
-   - 設定の「キー操作」タブで「キー操作を追加」を押し、キーを押したときに前面のアプリへ送るキーを決めます。
-   - 「よく使う操作」から タブを閉じる (⌘W)・ウインドウを閉じる (⇧⌘W)・閉じたタブを開き直す (⇧⌘T)・次/前のタブ (⌃Tab / ⌃⇧Tab)・しまう (⌘M)・アプリを隠す (⌘H)・アプリを終了 (⌘Q) などを選べます。「送るキー」のボタンで好きなキーを記録することもできます。
-   - 例: ⌥W に「タブを閉じる (⌘W)」を割り当てると、どのアプリでも ⌥W で ⌘W を押したのと同じになります。
-   - キーを送るには **アクセシビリティの許可** が要ります (下の「アクセシビリティの許可」を参照)。
-   - 送るキーを URLL 自身のショートカットと同じにすると繰り返してしまうので、保存時・読み込み時に止めます。
+#### App Launch
+**Register apps as well as URLs**
+   - In the "Apps" tab of Settings, choose an app with "Add App…". The key then launches the app or brings it to the front (the field holds `/Applications/….app`).
 
-#### その他の機能
-**⌃/ で割り当て済みのショートカット一覧を出す**
-   - どのアプリからでも ⌃/ (初期値) を押すと、画面中央に「キー → 名前・開く先」の一覧が出ます。設定を変えるとすぐ反映されます。
-   - もう一度 ⌃/ か Esc、またはパネルの外をクリックで閉じます。行をクリックするとその URL/アプリを開きます。
-   - 使っているアプリから前面を奪わずに出ます。メニューの「ショートカット一覧を表示」からも出せます。
-   - 一覧を出すキーは設定画面の「ショートカット一覧」で変更・解除できます。
-**設定の書き出し・読み込み (Export / Import)**
-   - 読みやすい **テキストファイル (.txt)** で、設定のバックアップや取り込みができます。
-   - メニューバーのメニュー（または設定画面下部）から **「設定を書き出し…」「設定を読み込み…」** を実行できます。
-   - テキストエディタで直接開いて編集・追記することも可能です（詳細は下記の「設定テキストファイルの書式」を参照）。
-**メニューバー常駐 (Dock には出ない)**
-   - 画面右上の 🔗 アイコンから、登録した URL を開く・設定・書き出し/読み込み・終了。
-   - メニューの先頭や設定画面に現在のバージョンが表示されます。
-   - 起動中にアプリをもう一度開く (Spotlight など) と設定画面が出ます。
-**ログイン時に自動で起動** (設定でオン/オフ)
-**設定画面**
-   - タブは URL登録 / アプリ登録 / キー操作 / 全般。1件を1行 (名前・内容・キー・削除) で並べます。
-   - ← → / Tab でタブを切り替え、↓ で入力欄へ。入力欄では Tab で移動、Esc でタブに戻ります (⌃Tab はいつでもタブ切り替え)。
-   - 初めて開くとメニューバーの 🔗 の下に出ます。動かした位置と大きさは覚えておきます。
-   - 下の「?」かメニューの「ヘルプ…」(⌘H) で使い方を表示します。
+#### Key Action
+**Assign key actions too (such as Close Tab ⌘W)**
+   - In the "Key Actions" tab of Settings, click "Add Key Action" and choose the key to send to the frontmost app when you press your shortcut.
+   - From the list of common actions you can pick Close Tab (⌘W), Close Window (⇧⌘W), Reopen Closed Tab (⇧⌘T), Next/Previous Tab (⌃Tab / ⌃⇧Tab), Minimize Window (⌘M), Hide App (⌘H), Quit App (⌘Q) and more. You can also record any key with the "Send" key button.
+   - Example: assign "Close Tab (⌘W)" to ⌥W, and pressing ⌥W in any app works like pressing ⌘W.
+   - Sending keys needs **Accessibility permission** (see "Accessibility Permission" below).
+   - If the key to send is the same as one of URLL's own shortcuts, it would repeat itself, so URLL stops this when you save or import.
+
+#### Other Features
+**Show your assigned shortcuts with ⌃/**
+   - Press ⌃/ (default) in any app to show a "key → name and target" list in the middle of the screen. Changes to the settings show up right away.
+   - Close it with ⌃/ again, Esc, or a click outside the panel. Click a row to open its URL or app.
+   - The list appears without taking focus away from the app you are using. You can also open it with "Show Shortcut List" in the menu.
+   - Change or remove the list key in the "General" tab of Settings.
+**Export and import settings**
+   - Back up and restore your settings as an easy-to-read **text file (.txt)**.
+   - Use **Export Settings…** and **Import Settings…** in the menu bar menu (or the buttons at the bottom of Settings).
+   - You can also open the file in a text editor to edit or add items (see "Settings Text File Format" below).
+**Lives in the menu bar (not in the Dock)**
+   - From the 🔗 icon at the top right of the screen: open your URLs, Settings, Export/Import, and Quit.
+   - The current version is shown at the top of the menu and in Settings.
+   - Opening the app again while it is running (from Spotlight, for example) shows Settings.
+**Open at login** (on/off in Settings)
+**Settings window**
+   - Tabs: URLs / Apps / Key Actions / General. Each item is one row (name, target, key, delete).
+   - Switch tabs with ← → / Tab, and press ↓ to enter the fields. In the fields, Tab moves and Esc returns to the tabs (⌃Tab switches tabs at any time).
+   - The first time, it opens below the 🔗 icon in the menu bar. It remembers where you moved it and its size.
+   - Click "?" at the bottom or "Help…" in the menu (⌘H) to see how to use URLL.
+
+### Language
+
+URLL shows English or Japanese depending on your Mac's language setting (Japanese on a Japanese Mac, English otherwise).
 
 ---
 
-## 設定テキストファイルの書式 (Export / Import)
+## Settings Text File Format (Export / Import)
 
-書き出した `.txt` ファイルは、1行に1項目を書く、読みやすいテキスト形式です。
+The exported `.txt` file is an easy-to-read text format with one item per line.
+The field names are written in the app's language. Both English and Japanese field names can be imported.
 
 ```txt
-# URLL 設定ファイル (v0.007)
-一覧キー: ⌃/
+# URLL settings file (v0.008)
+List key: ⌃/
 
 ---
-名前: Google
-キー: ⌥G
+Name: Google
+Key: ⌥G
 URL: https://www.google.com
 
 ---
-名前: タブを閉じる
-キー: ⌥W
-キー操作: ⌘W
+Name: Close Tab
+Key: ⌥W
+Action: ⌘W
 
 ---
-名前: ターミナル
-キー: ⌥T
-アプリ: /System/Applications/Utilities/Terminal.app
+Name: Terminal
+Key: ⌥T
+App: /System/Applications/Utilities/Terminal.app
 ```
 
-### 書き方が少しちがっても読み込めます
-- **全角・半角どちらでも読める**: `：`（全角コロン）や `⌥`（記号）のほか、`Opt+G`、`Cmd+W`、`Ctrl+/` などの英語表記、全角英数（`Ｇ` など）も読み込めます。
-- **いろいろな書き方に対応**: `キー:` / `起動キー:`、`名前:` / `タイトル:`、`URL:` / `アプリ:` / `キー操作:` などを受け付けます。
-- **読めない行は飛ばす**: 書き方のおかしい行・空行・コメント行（`#` や `//`）は無視し、読める項目だけを取り込みます。読めなかった行は、読み込むときに知らせます。
-- **キーの番号も書き出す**: 書き出すときに `[code:5, mod:2048]` のようなキーの番号も書くので、読み込むと同じキーに正確に戻ります（番号を消して `キー: ⌥G` だけにしても読み込めます）。
+### Small differences in writing are OK
+- **Full-width and half-width characters**: besides `:` and symbols such as `⌥`, URLL reads full-width colons (`：`), English notation such as `Opt+G`, `Cmd+W` and `Ctrl+/`, and full-width letters and digits (such as `Ｇ`).
+- **Several field names**: `Key:` / `Hotkey:`, `Name:` / `Title:`, `URL:` / `App:` / `Action:`, and the Japanese names (`キー:`, `名前:`, `アプリ:`, `キー操作:` and so on) are all accepted.
+- **Lines that cannot be read are skipped**: malformed lines, empty lines and comment lines (`#` or `//`) are ignored, and only valid items are imported. URLL tells you about unreadable lines when you import.
+- **Key codes are exported too**: the export includes key codes such as `[code:5, mod:2048]`, so importing restores exactly the same keys (you can also delete the codes and write just `Key: ⌥G`).
 
 ---
 
-## 設定ファイル
+## Settings Storage
 
-- アプリの ID (バンドル ID) は `local.urll` です。
-- 登録した URL・キーは、**初回起動時に「ユーザー名＋その日の日付」で名前を付けた設定ファイル**に保存します
-  (例: `~/Library/Preferences/urll.alice20261115.plist`)。
-- その名前は `~/Library/Preferences/local.urll.plist` の `settings_name` に覚えておき、以後はずっと同じファイルを使います。
-- 別の Mac への引っ越しやバックアップには、メニューの「**設定を書き出し…**」と「**設定を読み込み…**」を使います。
-
----
-
-## アクセシビリティの許可 (キー操作を使うときだけ・最初に1回)
-
-1. 設定画面の「キー操作」タブで「許可する…」を押す (キー操作を初めて使ったときも許可のダイアログが出ます)
-2. システム設定 → プライバシーとセキュリティ → アクセシビリティ で **URLL** をオンにする
-3. 設定画面に戻ると「許可されています」になります
-
-新しいバージョンを入れたあとにキー操作が急に効かなくなったら、アクセシビリティの一覧で URLL を「−」で消して、もう一度「＋」で `/Applications/URLL.app` を加えてください。
+- The app ID (bundle ID) is `local.urll`.
+- Your URLs and keys are saved in **a settings file named after your user name and the date of the first launch**
+  (example: `~/Library/Preferences/urll.alice20261115.plist`).
+- That name is stored as `settings_name` in `~/Library/Preferences/local.urll.plist`, and the same file is used from then on.
+- To move to another Mac or to make a backup, use **Export Settings…** and **Import Settings…** in the menu.
 
 ---
 
-## メモ
+## Accessibility Permission (only for Key Actions, once)
 
-- ショートカットはアプリが起動しているときだけ効きます。ログイン時の自動起動をオンにしておくのがおすすめです。
-- ⌥ + 英字は、ふだんは特殊文字（∑ など）の入力に使われます。URLL が動いている間は、URLL のショートカットが優先されます。
-- URLL のショートカットは、どのアプリを使っていても URLL が先に受け取ります。一覧のキーを ⌘/ にすると、Xcode・VS Code などの「行をコメントにする (⌘/)」が効かなくなるので、初期値は ⌃/ にしています。
-- 他のアプリが同じキーを先に使っていると登録できないことがあり、そのときは保存時に知らせます。
+1. In Settings, open the "Key Actions" tab and click "Allow…" (the permission dialog also appears the first time you use a key action)
+2. In System Settings → Privacy & Security → Accessibility, turn on **URLL**
+3. Back in Settings, it shows "Accessibility is allowed"
+
+If key actions suddenly stop working after you install a new version, remove URLL from the Accessibility list with "−", then add `/Applications/URLL.app` again with "+".
 
 ---
 
-## 利用条件
+## Notes
 
-現在のバージョン v0.007 は無料で使えます。今後、無料版と有料版を配布する予定です。 Copyright (c) 2026 IORI SOFT
+- Shortcuts work only while the app is running. Turning on Open at login is recommended.
+- ⌥ + a letter is normally used to type special characters (such as ∑). While URLL is running, URLL's shortcuts take priority.
+- URLL receives its shortcuts first, whatever app you are using. If you set the list key to ⌘/, "Comment line (⌘/)" in Xcode, VS Code and other apps stops working, so the default is ⌃/.
+- A key that another app already uses may not be registered. URLL tells you when you save.
+
+---
+
+## Terms of Use
+
+The current version, v0.008, is free to use. Free and paid versions are planned for the future. Copyright (c) 2026 IORI SOFT
